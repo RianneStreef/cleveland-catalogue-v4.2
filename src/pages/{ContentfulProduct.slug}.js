@@ -297,7 +297,6 @@ export const productQuery = graphql`
           productIntro
         }
         new
-        availableWhen
         categorySlug
         colors
         euro
