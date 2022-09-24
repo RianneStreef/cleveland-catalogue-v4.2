@@ -297,6 +297,7 @@ export const productQuery = graphql`
           productIntro
         }
         new
+        availableWhen
         categorySlug
         colors
         euro
@@ -329,7 +330,6 @@ export const productQuery = graphql`
             url
           }
         }
-        productUndertitle
         slug
 
         swiss
