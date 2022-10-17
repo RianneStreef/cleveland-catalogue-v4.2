@@ -1,5 +1,5 @@
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path: `.env`,
 });
 
 module.exports = {
@@ -33,6 +33,17 @@ module.exports = {
         theme_color: "#FFFFFF",
         display: "fullscreen",
         icon: "./src/images/icon.png",
+        // icon_options: {
+        //   purpose: `maskable`,
+        // },
+        icons: [
+          {
+            src: "./src/images/icon-maskable.png",
+            sizes: `512x512`,
+            type: `image/png`,
+            purpose: "maskable",
+          },
+        ],
       },
     },
     {
@@ -46,9 +57,6 @@ module.exports = {
       options: {
         accessToken: process.env.GATSBY_CONTENTFUL_TOKEN,
         spaceId: process.env.GATSBY_CONTENTFUL_ID,
-
-        // webhook not deploying correctly
-
         useNameForId: false,
       },
     },
