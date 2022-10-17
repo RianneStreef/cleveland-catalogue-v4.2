@@ -39,7 +39,7 @@ module.exports = {
             src: "./src/images/icon.png",
             sizes: `512x512`,
             type: `image/png`,
-            purpose: "all",
+            purpose: "any",
           },
           {
             src: "./src/images/icon-maskable.png",
