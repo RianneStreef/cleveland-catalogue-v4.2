@@ -33,10 +33,14 @@ module.exports = {
         theme_color: "#FFFFFF",
         display: "fullscreen",
         icon: "./src/images/icon.png",
-        // icon_options: {
-        //   purpose: `maskable`,
-        // },
+
         icons: [
+          {
+            src: "./src/images/icon.png",
+            sizes: `512x512`,
+            type: `image/png`,
+            purpose: "all",
+          },
           {
             src: "./src/images/icon-maskable.png",
             sizes: `512x512`,
