@@ -297,9 +297,9 @@ export const productQuery = graphql`
           productIntro
         }
         new
-
         categorySlug
         colors
+        availableWhen
         euro
         euro2
         euro3
