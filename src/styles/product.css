@@ -20,3 +20,20 @@ li {
 ul {
   padding-left: 20px;
 }
+
+.product-page {
+  padding: 10px;
+}
+.product-page-tech {
+  background: url("../images/tech-background.jpg");
+  background-position: center;
+  padding: 10px;
+}
+
+.product-page-tech h3 {
+  color: #fff;
+}
+
+.product-page-tech h5 {
+  color: #fff;
+}
