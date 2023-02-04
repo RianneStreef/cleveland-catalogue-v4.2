@@ -112,9 +112,7 @@ const CategoriesPage = (props) => {
         </div>
       </div>
       <div className="copyright-container">
-        <p className="copyright">
-          ©️ 2023 Sumitomo Rubber Industries, Ltd. ALL RIGHTS Reserved.
-        </p>
+        <p className="copyright">©️ 2023 Dunlop Sports. ALL RIGHTS Reserved.</p>
       </div>
     </>
   );
