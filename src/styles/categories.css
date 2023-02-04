@@ -181,8 +181,23 @@ a {
   overflow: hidden;
 }
 
+@media only screen and (min-width: 400px) {
+  .category-title {
+    width: 98%;
+  }
+}
+
 @media only screen and (min-width: 700px) {
   .logo {
     width: 50%;
+  }
+  .category-title {
+    width: 98%;
+  }
+}
+
+@media only screen and (min-width: 860px) {
+  .category-title {
+    width: 98%;
   }
 }
