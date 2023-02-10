@@ -274,7 +274,9 @@ const ProductPage = (props) => {
                   </p>
                 </>
               )}
-              {product.availableWhen && <p>In store {product.availableWhen}</p>}
+              {product.euro === null && (
+                <p>In store in {product.availableWhen}</p>
+              )}
             </div>
           </div>
         </>
