@@ -12,6 +12,8 @@ import logo from "../images/logo-white.svg";
 import "../styles/index.css";
 
 const CategoriesPage = (props) => {
+  let year = new Date().getFullYear();
+
   useEffect(() => {
     window.addEventListener("beforeinstallprompt", (e) => {
       let deferredPrompt;
@@ -112,7 +114,9 @@ const CategoriesPage = (props) => {
         </div>
       </div>
       <div className="copyright-container">
-        <p className="copyright">©️ 2023 Dunlop Sports. ALL RIGHTS Reserved.</p>
+        <p className="copyright">
+          ©️ {year} Dunlop Sports. ALL RIGHTS Reserved.
+        </p>
       </div>
     </>
   );
