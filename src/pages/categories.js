@@ -5,6 +5,7 @@ import headerDemoDay from "../images/header-demoday_2022.png";
 import download from "../images/icon-download-v2.png";
 
 import Layout from "../components/Layout";
+import Consent from "../components/Consent";
 import { Helmet } from "react-helmet";
 
 import logo from "../images/logo-white.svg";
@@ -82,6 +83,7 @@ const CategoriesPage = (props) => {
           <title>Cleveland Golf EU & UK Catalogue</title>
           <meta name="robots" content="noindex" />
         </Helmet>
+        <Consent />
         <div className="logo-container">
           <img src={logo} className="logo" alt="Cleveland Golf Logo" />
         </div>

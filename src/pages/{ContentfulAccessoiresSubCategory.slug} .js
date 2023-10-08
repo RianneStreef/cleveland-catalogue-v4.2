@@ -2,6 +2,8 @@ import React from "react";
 import { Link, graphql } from "gatsby";
 import { Helmet } from "react-helmet";
 
+import Consent from "../components/Consent";
+
 import home from "../images/home.png";
 import back from "../images/back.png";
 
@@ -89,6 +91,7 @@ const SubCategoryPage = (props) => {
         <title>Cleveland Golf EU & UK Catalogue</title>
         <meta name="robots" content="noindex" />
       </Helmet>
+      <Consent />
       <div className="category-title">
         <Link to="/accessoires" className="nav-link">
           <img src={back} className="nav-icon-back" alt="back link" />

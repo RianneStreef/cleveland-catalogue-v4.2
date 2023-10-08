@@ -6,6 +6,7 @@ import home from "../images/home.png";
 import back from "../images/back.png";
 
 import Layout from "../components/Layout";
+import Consent from "../components/Consent";
 
 import "../styles/categories.css";
 
@@ -117,6 +118,7 @@ const LauncherSubCategoryPage = (props) => {
         <title>Cleveland Golf EU & UK Catalogue</title>
         <meta name="robots" content="noindex" />
       </Helmet>
+      <Consent />
       <div className="category-title">
         <Link to="/launcher-xl" className="nav-link">
           <img src={back} className="nav-icon-back" alt="back link" />
