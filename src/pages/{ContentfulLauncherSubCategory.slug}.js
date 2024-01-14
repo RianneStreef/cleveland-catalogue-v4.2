@@ -134,7 +134,7 @@ const LauncherSubCategoryPage = (props) => {
         <div className="launcher-menu">
           <div>{categoryInfo}</div>
           <div>{launcherSubsList}</div>
-          <p className="launcher-in-store">Now available in stores</p>
+          <p className="launcher-in-store">In stores in February 2024</p>
         </div>
       ) : (
         <>
