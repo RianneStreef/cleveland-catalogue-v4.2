@@ -11,6 +11,7 @@ import "../styles/categories.css";
 const CategoryPage = (props) => {
   let categories = props.data.allContentfulMenuItem.nodes;
   let launcherSubs = props.data.allContentfulLauncherSubCategory.nodes;
+  let hiboreSubs = props.data.allContentfulHiboreSubCatergory.nodes;
   let products = props.data.allContentfulProduct.nodes;
   let slug = props.params.slug;
 
@@ -135,6 +136,24 @@ const CategoryPage = (props) => {
           }}
         >
           <h2 className="category-list-title">{launcherSub.categoryTitle}</h2>
+        </div>
+      </Link>
+    );
+  });
+
+  const hiboreSubsList = hiboreSubs.map((hiboreSub) => {
+    return (
+      <Link to={hiboreSub.slug} key={hiboreSub.id}>
+        <div
+          className="accessoires-sub"
+          style={{
+            backgroundImage: `url(${hiboreSub.categoryImage.file.url})`,
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+          }}
+        >
+          <h2 className="category-list-title">{hiboreSub.categoryTitle}</h2>
         </div>
       </Link>
     );
@@ -269,6 +288,7 @@ const CategoryPage = (props) => {
         </Link>
         {slug === "club-sets" ? <h1>Club Sets</h1> : null}
         {slug === "launcher-xl" ? <h1>Launcher XL</h1> : null}
+        {slug === "hibore-xl" ? <h1>HiBore XL</h1> : null}
         {slug !== "club-sets" && slug !== "launcher-xl" ? (
           <div>{categoryTitle}</div>
         ) : null}
@@ -281,6 +301,12 @@ const CategoryPage = (props) => {
       {slug === "launcher-xl" ? (
         <div>
           {launcherSubsList}{" "}
+          {/* <p className="launcher-in-store">Now available in stores</p> */}
+        </div>
+      ) : null}
+      {slug === "hibore-xl" ? (
+        <div>
+          {hiboreSubsList}{" "}
           <p className="launcher-in-store">Now available in stores</p>
         </div>
       ) : null}
@@ -317,6 +343,7 @@ const CategoryPage = (props) => {
       {slug === "accessories" ? <div>{accessoiresSubsList}</div> : null}
 
       {slug !== "launcher-xl" &&
+      slug !== "hibore-xl" &&
       slug !== "club-sets" &&
       slug !== "accessories" &&
       slug !== "wedges" &&
@@ -370,6 +397,21 @@ export const categoryQuery = graphql`
     }
 
     allContentfulLauncherSubCategory(sort: { fields: index }) {
+      nodes {
+        id
+        category
+        categoryImage {
+          file {
+            url
+          }
+        }
+        categoryImageAlt
+        categoryTitle
+        slug
+        index
+      }
+    }
+    allContentfulHiboreSubCatergory(sort: { fields: index }) {
       nodes {
         id
         category

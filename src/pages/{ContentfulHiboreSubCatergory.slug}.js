@@ -10,15 +10,12 @@ import Consent from "../components/Consent";
 
 import "../styles/categories.css";
 
-const LauncherSubCategoryPage = (props) => {
-  let launcherSubs = props.data.allContentfulLauncherSubCategory.nodes;
+const HiboreSubCategoryPage = (props) => {
   let hiboreSubs = props.data.allContentfulHiboreSubCatergory.nodes;
   let products = props.data.allContentfulProduct.nodes;
   let slug = props.params.slug;
 
-  console.log(hiboreSubs);
-
-  const categoryTitle = launcherSubs
+  const categoryTitle = hiboreSubs
     .filter((category) => category.category === slug)
     .map((category) => {
       return (
@@ -28,7 +25,7 @@ const LauncherSubCategoryPage = (props) => {
       );
     });
 
-  const categoryInfo = launcherSubs
+  const categoryInfo = hiboreSubs
     .filter((category) => category.category === slug)
     .map((category) => {
       return (
@@ -52,7 +49,7 @@ const LauncherSubCategoryPage = (props) => {
       );
     });
 
-  const launcherSubsList = launcherSubs.map((launcherSubsSub) => {
+  const hiboreSubsList = hiboreSubs.map((launcherSubsSub) => {
     return (
       <Link
         to={launcherSubsSub.slug}
@@ -123,7 +120,7 @@ const LauncherSubCategoryPage = (props) => {
       </Helmet>
       <Consent />
       <div className="category-title">
-        <Link to="/launcher-xl" className="nav-link">
+        <Link to="/hibore-xl" className="nav-link">
           <img src={back} className="nav-icon-back" alt="back link" />
         </Link>
         <div>{categoryTitle}</div>
@@ -133,11 +130,11 @@ const LauncherSubCategoryPage = (props) => {
       </div>
       <div className="menu-placeholder" />
 
-      {slug === "launcher-xl" ? (
+      {slug === "hibore-xl" ? (
         <div className="launcher-menu">
           <div>{categoryInfo}</div>
-          <div>{launcherSubsList}</div>
-          <p className="launcher-in-store">In stores in February 2024</p>
+          <div>{hiboreSubsList}</div>
+          <p className="launcher-in-store">In stores in December 2025</p>
         </div>
       ) : (
         <>
@@ -157,7 +154,7 @@ const LauncherSubCategoryPage = (props) => {
 };
 
 export const categoryQuery = graphql`
-  query launcherSubCategoryQuery {
+  query hiboreSubCategoryQuery {
     allContentfulMenuItem {
       nodes {
         id
@@ -176,8 +173,7 @@ export const categoryQuery = graphql`
         }
       }
     }
-
-    allContentfulLauncherSubCategory(sort: { fields: index }) {
+    allContentfulHiboreSubCatergory(sort: { fields: index }) {
       nodes {
         id
         category
@@ -190,14 +186,6 @@ export const categoryQuery = graphql`
         categoryTitle
         slug
         index
-      }
-    }
-
-    allContentfulHiboreSubCatergory(sort: { fields: index }) {
-      nodes {
-        category
-        index
-        slug
       }
     }
 
@@ -220,5 +208,5 @@ export const categoryQuery = graphql`
   }
 `;
 
-LauncherSubCategoryPage.Layout = Layout;
-export default LauncherSubCategoryPage;
+HiboreSubCategoryPage.Layout = Layout;
+export default HiboreSubCategoryPage;
