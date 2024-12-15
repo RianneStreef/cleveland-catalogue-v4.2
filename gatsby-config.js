@@ -35,12 +35,12 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: `gatsby-plugin-offline`,
-      options: {
-        precachePages: ["/"],
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-offline`,
+    //   options: {
+    //     precachePages: ["/"],
+    //   },
+    // },
     {
       resolve: "gatsby-source-contentful",
       options: {
