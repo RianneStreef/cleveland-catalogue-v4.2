@@ -104,7 +104,7 @@ const ProductPage = (props) => {
             </div>
             <div
               className={`${
-                product.new && product.categorySlug === "wedges"
+                product.categorySlug === "wedges"
                   ? "product-page-tech"
                   : "product-page"
               }`}
