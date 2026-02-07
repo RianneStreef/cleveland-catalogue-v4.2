@@ -103,6 +103,19 @@ const CategoriesPage = (props) => {
           </Link>
         </div>
       </div>
+      <div
+        style={{ textAlign: "center", color: "#808080", fontSize: "0.8rem" }}
+      >
+        <a
+          href="https://srixonconnect.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: "#808080", textDecoration: "underline" }}
+        >
+          BtoB Srixon Connect
+        </a>
+      </div>
+
       <div className="download">
         <p className="save-message" id="save-message">
           <i>
@@ -115,6 +128,7 @@ const CategoriesPage = (props) => {
           <img src={download} alt="add app to home screen" />
         </div>
       </div>
+
       <div className="copyright-container">
         <p className="copyright">
           ©️ {year} Dunlop Sports. ALL RIGHTS Reserved.
