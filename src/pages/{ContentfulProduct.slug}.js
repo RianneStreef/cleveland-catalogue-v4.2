@@ -43,7 +43,11 @@ const ProductPage = (props) => {
     .filter((product) => product.slug === `/${slug}`)
     .map((product) => {
       function currencyFormat(price) {
-        return price
+        if (price == null || isNaN(price)) {
+          return "";
+        }
+
+        return Number(price)
           .toFixed(2)
           .replace(".", ",")
           .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
