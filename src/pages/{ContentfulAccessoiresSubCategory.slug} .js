@@ -48,25 +48,36 @@ const SubCategoryPage = (props) => {
       );
     });
 
-  const accessoiresList = accessoiresSubs.map((accessoiresSub) => {
-    return (
-      // <Link
-      //   to={accessoiresSub.slug}
-      //   key={accessoiresSub.id}
-      //   className="category-list-link"
-      //   style={{
-      //     backgroundImage: `url(${accessoiresSub.categoryImage.file.url})`,
-      //     backgroundSize: "cover",
-      //     backgroundRepeat: "no-repeat",
-      //     backgroundPosition: "center",
-      //     height: "20vh",
-      //   }}
-      // >
-      //   <h2 className="category-list-title">{accessoiresSub.categoryTitle}</h2>
-      // </Link>
-      <h1>accessories</h1>
-    );
-  });
+  const hiddenCategories = ["Golf Bags", "Travel Accessories"];
+
+  const accessoiresList = accessoiresSubs
+    .filter(
+      (accessoiresSub) =>
+        !hiddenCategories.includes(accessoiresSub.categoryTitle),
+    )
+    .map((accessoiresSub) => {
+      return <h1 key={accessoiresSub.id}>accessories</h1>;
+    });
+
+  // const accessoiresList = accessoiresSubs.map((accessoiresSub) => {
+  //   return (
+  //     // <Link
+  //     //   to={accessoiresSub.slug}
+  //     //   key={accessoiresSub.id}
+  //     //   className="category-list-link"
+  //     //   style={{
+  //     //     backgroundImage: `url(${accessoiresSub.categoryImage.file.url})`,
+  //     //     backgroundSize: "cover",
+  //     //     backgroundRepeat: "no-repeat",
+  //     //     backgroundPosition: "center",
+  //     //     height: "20vh",
+  //     //   }}
+  //     // >
+  //     //   <h2 className="category-list-title">{accessoiresSub.categoryTitle}</h2>
+  //     // </Link>
+  //     <h1>accessories</h1>
+  //   );
+  // });
 
   const productList = products
     .filter((product) => product.categorySlug === slug)

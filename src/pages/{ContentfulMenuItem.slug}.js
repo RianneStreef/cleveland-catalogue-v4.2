@@ -15,6 +15,8 @@ const CategoryPage = (props) => {
   let products = props.data.allContentfulProduct.nodes;
   let slug = props.params.slug;
 
+  console.log("SUB CATEGORY PAGE LOADED");
+
   const categoryTitle = categories
     .filter((category) => category.category === slug)
     .map((category) => {
@@ -114,10 +116,10 @@ const CategoryPage = (props) => {
 
   const accessoiresSubsList = (
     <div className="padding">
-      <h2 className="category-list-title">Golf Bags</h2>
+      {/* <h2 className="category-list-title">Golf Bags</h2>
       {golfBagList}
       <h2 className="category-list-title">Travel Accessories</h2>
-      {travelList}
+      {travelList} */}
       <h2 className="category-list-title">Headwear and Accessories</h2>
       {headWearList}
     </div>
@@ -233,7 +235,7 @@ const CategoryPage = (props) => {
 
   const productListMen = products
     .filter(
-      (product) => product.categorySlug === slug && product.women !== true
+      (product) => product.categorySlug === slug && product.women !== true,
     )
     .map((product) => {
       return (
@@ -255,7 +257,7 @@ const CategoryPage = (props) => {
 
   const productListWomen = products
     .filter(
-      (product) => product.categorySlug === slug && product.women === true
+      (product) => product.categorySlug === slug && product.women === true,
     )
     .map((product) => {
       return (
